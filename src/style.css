@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-theme: #a3e635;
+    --light-text: white;
+    --dark-text: black;
+    --font-heading: 'DM Serif Display', serif;
+    --font-text: 'Roboto', sans-serif;
+}
+
+body {
+    background-image: url("./background.PNG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+nav {
+    background-color: var(--main-theme);
+    position: fixed;
+    width: 100%;
+}
+
+nav > ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+nav > ul > li {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--dark-text);
+    letter-spacing: 2.5px;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+nav > ul > li:hover {
+    color: var(--light-text);
+}
+
+#content {
+    width: 60%;
+    height: 100vh;
+    padding-top: 70px;
+    margin: 0 auto;
+    background-color: rgba(238, 238, 238, 0.97);
+}
+
+hr {
+    margin: 15px 0;
+    border: none;
+    height: 2px;
+    background-color: #333;
+}
+
+body.home .home-tab{
+    padding: 0 50px;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+body.home .top>h1,
+body.home .bottom>h3{
+    text-align: center;
+}
+
+body.home .top>h1 {
+    font-size: 5rem;
+}
+
+body.home .bottom>h3 {
+    font-size: 3rem;
+    margin-top: 50px;
+}
+
+body.home .home-tab p {
+    font-size: 1.2rem;
+    margin: 15px 0;
+}
+
+footer {
+    position: fixed;
+    right: 0;
+    left:0;
+    bottom: 0;
+    background-color: var(--main-theme);
+    text-align: center;
+    font-size: 1rem;
+    padding: 10px 0;
+}
