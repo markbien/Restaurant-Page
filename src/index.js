@@ -1,9 +1,11 @@
 import './style.css';
+import Chat from "./chat.png";
+import Phone from "./phone-call.png";
 
 const $ = document.querySelector.bind(document);
 const $create = document.createElement.bind(document);
 const body = $('body');
-body.classList.add('home');
+body.classList.add('contact-us');
 
 const content = $create('div');
 content.setAttribute('id', 'content');
@@ -79,6 +81,66 @@ function homeTabComponent(){
     return homeTab;
 }
 
+function contactComponent(){
+    const contactTab = $create('div');
+    contactTab.classList.add('contact-tab');
+
+    const emailTab = $create('div');
+    emailTab.classList.add('contact');
+
+    const chatIcon = new Image();
+    chatIcon.src = Chat;
+
+    const emailContents = $create('div');
+    emailContents.classList.add('contents');
+
+    const h3 = $create('h3');
+    h3.textContent = "Customer Support";
+
+    const p1 = $create("p");
+    p1.textContent = "Send us an email with your feedbacks or any questions that you have.";
+
+    const btn = $create('button');
+    btn.textContent = "Contact Us";
+
+    const phoneTab = $create("div");
+    phoneTab.classList.add("contact");
+
+    const callIcon = new Image();
+    callIcon.src = Phone;
+
+    const phoneContents = $create('div');
+    phoneContents.classList.add('contents');
+
+    const h3a = $create("h3");
+    h3a.textContent = "Talk to us";
+
+    const p2 = $create('p');
+    p2.textContent = "Call us to get faster assistance.";
+
+    const p3 = $create('p');
+    p3.textContent = "+63-999-999-9999";
+
+    contactTab.appendChild(emailTab);
+    contactTab.appendChild(phoneTab);
+
+    emailTab.appendChild(chatIcon);
+    emailTab.appendChild(emailContents);    
+    
+    emailContents.appendChild(h3);
+    emailContents.appendChild(p1);
+    emailContents.appendChild(btn);
+
+    phoneTab.appendChild(callIcon);
+    phoneTab.appendChild(phoneContents);
+
+    phoneContents.appendChild(h3a);
+    phoneContents.appendChild(p2);
+    phoneContents.appendChild(p3);
+
+    return contactTab;
+}
+
 body.insertBefore(navComponent(), content);
 body.appendChild(footerComponent());
-content.appendChild(homeTabComponent());
+content.appendChild(contactComponent());

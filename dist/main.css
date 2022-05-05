@@ -84,7 +84,6 @@ body.home .top>h1 {
 
 body.home .bottom>h3 {
     font-size: 3rem;
-    margin-top: 50px;
 }
 
 body.home .home-tab p {
@@ -101,4 +100,48 @@ footer {
     text-align: center;
     font-size: 1rem;
     padding: 10px 0;
+}
+
+body.contact-us .contact-tab {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding-top: 50px;
+}
+
+body.contact-us .contact {
+    background-color: white;
+    width: 80%;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: space-between;
+    padding: 50px;
+    position: relative;
+}
+
+body.contact-us .contents>*{
+    padding: 5px;
+}
+
+body.contact-us .contents>button {
+    background-color: var(--main-theme);
+    border: 0 none;
+    padding: 10px;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    transition: all 0.3s ease;
+}
+
+body.contact-us .contents>button:hover {
+    background-color: aquamarine;
+    cursor: pointer;
+}
+
+body.contact-us img {
+    width: 50px;
 }
