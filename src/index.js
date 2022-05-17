@@ -2,15 +2,22 @@ import './style.css';
 import Chat from "./chat.png";
 import Phone from "./phone-call.png";
 
+// bind $ to document.querySelector
 const $ = document.querySelector.bind(document);
+// bind $create to creating elements
 const $create = document.createElement.bind(document);
+// declare body variable
 const body = $('body');
+// initially set the body's class
 body.classList.add('contact-us');
 
+// create content div
 const content = $create('div');
 content.setAttribute('id', 'content');
+// append to body and this will contain all the components
 body.appendChild(content);
 
+// create navigation component
 function navComponent(){
     const nav = $create('nav');
     const ul = $create('ul');
@@ -26,6 +33,7 @@ function navComponent(){
     return nav;
 }
 
+// create footer component
 function footerComponent(){
     const footer = $create('footer');
     footer.textContent = "Baktol Restaurant Inc.";
@@ -33,6 +41,7 @@ function footerComponent(){
     return footer;
 }
 
+// home tab component
 function homeTabComponent(){
     const homeTab = $create('div');
     homeTab.classList.add('home-tab');
@@ -81,6 +90,7 @@ function homeTabComponent(){
     return homeTab;
 }
 
+// contact tab component
 function contactComponent(){
     const contactTab = $create('div');
     contactTab.classList.add('contact-tab');
@@ -141,6 +151,35 @@ function contactComponent(){
     return contactTab;
 }
 
+// menu component
+function menuComponent(){
+    const menuTab = $create("div");
+    menuTab.classList.add("menu-tab");
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// inserts the nav component BEFORE the content div
 body.insertBefore(navComponent(), content);
+// appends the footer to the body (currently the last element)
 body.appendChild(footerComponent());
-content.appendChild(contactComponent());
+// appends one of the tabs to the content div
+// will change later so that the CLICK will trigger the appending of components
+// will also need to CLEAR before APPENDING
+// content.appendChild(contactComponent());
