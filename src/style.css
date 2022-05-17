@@ -146,3 +146,19 @@ body.contact-us .contents>button:hover {
 body.contact-us img {
     width: 50px;
 }
+
+body.menu table {
+    border: 3px solid rgba(0,0,0,0.7);
+    padding: 10px;
+    width: 80%;
+    margin: 30px auto;
+}
+
+body.menu th {
+    padding-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+body.menu td {
+    text-align: center;
+}

@@ -9,7 +9,7 @@ const $create = document.createElement.bind(document);
 // declare body variable
 const body = $('body');
 // initially set the body's class
-body.classList.add('contact-us');
+body.classList.add('menu');
 
 // create content div
 const content = $create('div');
@@ -151,28 +151,60 @@ function contactComponent(){
     return contactTab;
 }
 
-// menu component
 function menuComponent(){
     const menuTab = $create("div");
     menuTab.classList.add("menu-tab");
 
+    const coffeeTable = $create('table');
+    const saladTable = $create('table');
 
+    generateTD('Coffee', 'Coffee', 'Price', coffeeTable);
+    generateTD('Salad', 'Salad', 'Price', saladTable);
+
+    menuTab.appendChild(coffeeTable);
+    menuTab.appendChild(saladTable);
+    
+    return menuTab;
 }
 
+// generate test items
+function generateTD(text1, text2, text3, table){
+    const tr1 = $create('tr');
+    const th = $create("th");
+    th.setAttribute('colspan', 2);
+    th.textContent = text1;
+    tr1.appendChild(th);
+    table.appendChild(tr1);
+
+    for(let i = 1; i <= 4; i++){
+        const tr = $create("tr");
+        const name = $create('td');
+        name.textContent = `${text2} ${i}`;
+
+        const price = $create('td');
+        price.textContent = `${text3} ${i}`;
+
+        tr.appendChild(name);
+        tr.appendChild(price);
+
+        table.appendChild(tr);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+// only add the HR when i < 4
+// means HR will not be added after the last item
+        if (i < 4) {
+            const trForHrTag = $create('tr');
+            const tdForHrTag = $create('td');
+            tdForHrTag.setAttribute("colspan", 2);
+            const hr = $create('hr');
+    
+            tdForHrTag.appendChild(hr);
+            trForHrTag.appendChild(tdForHrTag);    
+    
+            table.appendChild(trForHrTag);
+        }        
+    }
+}
 
 
 // inserts the nav component BEFORE the content div
@@ -182,4 +214,5 @@ body.appendChild(footerComponent());
 // appends one of the tabs to the content div
 // will change later so that the CLICK will trigger the appending of components
 // will also need to CLEAR before APPENDING
+content.appendChild(menuComponent());
 // content.appendChild(contactComponent());
