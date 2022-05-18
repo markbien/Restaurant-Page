@@ -95,6 +95,9 @@ const pageComponents = (() => {
     const emailTab = $create("div");
     emailTab.classList.add("contact");
 
+    const chatIcon = new Image();
+    chatIcon.src = Chat;
+
     const emailContents = $create("div");
     emailContents.classList.add("contents");
 
@@ -111,6 +114,9 @@ const pageComponents = (() => {
     const phoneTab = $create("div");
     phoneTab.classList.add("contact");
 
+    const callIcon = new Image();
+    callIcon.src = Phone;
+
     const phoneContents = $create("div");
     phoneContents.classList.add("contents");
 
@@ -126,12 +132,14 @@ const pageComponents = (() => {
     contactTab.appendChild(emailTab);
     contactTab.appendChild(phoneTab);
 
+    emailTab.appendChild(chatIcon);
     emailTab.appendChild(emailContents);
 
     emailContents.appendChild(h3);
     emailContents.appendChild(p1);
     emailContents.appendChild(btn);
 
+    phoneTab.appendChild(callIcon);
     phoneTab.appendChild(phoneContents);
 
     phoneContents.appendChild(h3a);
