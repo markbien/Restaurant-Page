@@ -1,5 +1,143 @@
-* {
+@font-face {
+  font-family: RobotoRegular;
+  src: url(fonts/Roboto-Regular.ttf) format(woff2);
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: RobotoBold;
+  src: url(fonts/Roboto-Bold.ttf) format("woff");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Cursive;
+  src: url(fonts/QwitcherGrypen-Regular.ttf) format(woff2);
+  font-weight: 600;
+}
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: RobotoRegular, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+:root {
+  --heading-font: RobotoBold, Verdana, Geneva, Tahoma, sans-serif;
+  --text-font: RobotoRegular, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+}
+
+#logo {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-align: center;
+}
+
+#logo > h1 {
+  font-family: Cursive, Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2rem;
+}
+
+#logo > p {
+  font-family: var(--text-font);
+  font-size: .8rem;
+  color: rgba(62, 61, 61, .6);
+}
+
+header > nav {
+  display: flex;
+  justify-content: center;
+}
+
+nav > button {
+  padding: 10px 35px;
+  font-family: var(--heading-font);
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: rgb(66, 66, 66);
+}
+
+hr {
+  border: .4px solid rgba(191, 191, 191, 0.257);
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+#content {
+  width: 70%;
+}
+
+#home-content section {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 100px;
+}
+
+#home-content section:nth-child(2) > .image-holder {
+  order: 2;
+}
+
+.image-holder {
+  flex: 2;
+}
+.text {
+  flex: 1;
+}
+
+.text h2 {
+  font-size: 2rem;
+  padding-bottom: 10px;
+}
+
+.text p {
+  line-height: 2;
+}
+
+section img {
+  height: auto;
+  width: 100%;
+}
+
+footer {
+  padding: 5px;
+  width: 100%;
+  background-color: rgba(185, 185, 185, 0.224);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+footer > ul {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+}
+
+footer img {
+  height: auto;
+  width: 25px;
 }
