@@ -9,6 +9,18 @@ module.exports = {
     filename: 'main.js',
     clean: true,
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|jpg|jpeg)$/i,
+        type: 'asset/resource',
+      }
+    ]
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/template.html',
