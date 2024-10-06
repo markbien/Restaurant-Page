@@ -116,30 +116,3 @@ export default function createHome() {
 
   return homeContentDiv;
 }
-
-
-function createSectionTest(){
-  const section = document.createElement("section");
-  section.classList.add('introduction');
-
-  const imageHolder = document.createElement("div");
-  imageHolder.classList.add("image-holder");
-  const img = document.createElement("img");
-  img.src = foodPic;
-  img.alt = "test";
-  imageHolder.appendChild(img);
-
-  const text = document.createElement("div");
-  text.classList.add("text");
-  const h2 = document.createElement("h2");
-  h2.textContent = "Who we are";
-  const p = document.createElement("p");
-  p.textContent = "lorem chuchuchuchuchu";
-  text.appendChild(h2);
-  text.appendChild(p);
-
-  section.appendChild(imageHolder);
-  section.appendChild(text);
-
-  return section;
-}
