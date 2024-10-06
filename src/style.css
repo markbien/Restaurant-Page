@@ -45,7 +45,7 @@ footer,
 .other-info-container > div,
 .feedback-container,
 #content,
-.food-details  {
+.food-details {
   display: flex;
   flex-direction: column;
 }
@@ -107,14 +107,24 @@ hr {
   margin-bottom: 100px;
 }
 
-#home-content section {
+.topics:nth-child(2) > .image-holder {
+  order: 1;
+}
+
+.introduction,
+.internship-program,
+.fresh-ingredients {
   display: flex;
   gap: 30px;
   margin-bottom: 100px;
 }
 
-#home-content section:nth-child(2) > .image-holder {
+#home-content > section:nth-child(2) > .image-holder {
   order: 2;
+}
+
+#introduction {
+  background: red;
 }
 
 .image-holder {
@@ -328,8 +338,6 @@ footer img {
 
 /* MENU */
 
-
-
 /* Mobile View */
 @media (min-width: 300px) and (max-width: 1160px) {
   header > nav {
@@ -347,12 +355,11 @@ footer img {
     padding: 20px;
   }
 
-  #home-content > section {
+  .topics {
     display: flex;
     flex-direction: column;
   }
-
-  #home-content section:nth-child(2) > .image-holder {
+  .topics:nth-child(2) > .image-holder {
     order: 0;
   }
 
