@@ -1,4 +1,4 @@
-import {createCard, createMenuContainer} from './menu.js';
+import {createCard, createMenuContainer, createMenuHeading} from './menu.js';
 import chickenAdobo from '../img/chicken-adobo.jpg';
 import chickenCurry from '../img/chicken-curry.jpg';
 import chickenTeriyaki from '../img/chicken-teriyaki.jpg';
@@ -13,6 +13,8 @@ import crispyVeggieFritters from '../img/crispy-vegetable-fritters.jpg';
 import veggieSalad from '../img/vegetable-salad.jpg';
 
 export default function initializeMenuPage(content){
+  content.appendChild(createMenuHeading());
+
   const chickenMenuContainer = createMenuContainer("Chicken");
   loadChickenCards(chickenMenuContainer);
 

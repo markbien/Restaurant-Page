@@ -1,3 +1,25 @@
+function createMenuHeading(){
+  const mainMenuContainer = document.createElement('div');
+  mainMenuContainer.setAttribute('id', 'main-menu-container');
+
+  const menuTitleDiv = document.createElement("div");
+  menuTitleDiv.classList.add("menu-title");
+
+  const h2 = document.createElement("h2");
+  h2.textContent = "Menu";
+  const p = document.createElement("p");
+  p.textContent = `The menu at LMP Restaurant is a celebration of fresh, locally sourced
+        ingredients, thoughtfully crafted into seasonal dishes that highlight
+        the best of each harvest. Each plate is designed to bring out vibrant,
+        natural flavors, reflecting the restaurant's commitment to
+        sustainability and culinary creativity.`;
+  menuTitleDiv.appendChild(h2);
+  menuTitleDiv.appendChild(p);
+  mainMenuContainer.appendChild(menuTitleDiv);
+  
+  return mainMenuContainer;
+}
+
 function createCard(imgSrc, imgAlt, foodName, foodDesc, foodPrice) {
   const cardDiv = document.createElement("div");
   cardDiv.classList.add("card", "box-shadow");
@@ -32,21 +54,6 @@ function createMenuContainer(foodType) {
   const menuContainerDiv = document.createElement("div");
   menuContainerDiv.classList.add("menu-container");
 
-  const menuTitleDiv = document.createElement("div");
-  menuTitleDiv.classList.add("menu-title");
-
-  const h2 = document.createElement("h2");
-  h2.textContent = "Menu";
-  const p = document.createElement("p");
-  p.textContent = `The menu at LMP Restaurant is a celebration of fresh, locally sourced
-        ingredients, thoughtfully crafted into seasonal dishes that highlight
-        the best of each harvest. Each plate is designed to bring out vibrant,
-        natural flavors, reflecting the restaurant's commitment to
-        sustainability and culinary creativity.`;
-  menuTitleDiv.appendChild(h2);
-  menuTitleDiv.appendChild(p);
-  menuContainerDiv.appendChild(menuTitleDiv);
-
   const foodGroup = document.createElement('section');
   foodGroup.classList.add('food-group');
 
@@ -67,4 +74,4 @@ function createMenuContainer(foodType) {
   return { menuContainerDiv, addCardToContainer };
 }
 
-export { createCard, createMenuContainer };
+export { createCard, createMenuContainer, createMenuHeading };

@@ -27,18 +27,18 @@ function createHeader() {
     const btn = document.createElement("button");
     btn.textContent = option;
     btn.setAttribute('id', option.replaceAll(/\s/gi, "").toLowerCase());
-
     btn.addEventListener('click', ()=> {
-      const content = document.querySelector('#content');
-      content.textContent = "";
-      const id = btn.getAttribute('id');
-      if (id === 'home') {
-        content.appendChild(createHome());
-      } else if (id === 'menu') {
-        initializeMenuPage(content);
-      } else {
-        content.appendChild(createContactUsContainer())
-      }
+      // const content = document.querySelector('#content');
+      // content.textContent = "";
+      // const id = btn.getAttribute('id');
+      // if (id === 'home') {
+      //   content.appendChild(createHome());
+      // } else if (id === 'menu') {
+      //   initializeMenuPage(content);
+      // } else {
+      //   content.appendChild(createContactUsContainer())
+      // }
+      switchPages(btn);
     });
 
     nav.appendChild(btn);
@@ -79,6 +79,19 @@ function createFooter() {
   footer.appendChild(ul);
 
   return footer;
+}
+
+function switchPages(btn){
+  const content = document.querySelector('#content');
+  content.textContent = "";
+  const id = btn.getAttribute('id');
+  if (id === 'home') {
+    content.appendChild(createHome());
+  } else if (id === 'menu') {
+    initializeMenuPage(content);
+  } else {
+    content.appendChild(createContactUsContainer())
+  }
 }
 
 export default function createLandingPage(body) {
