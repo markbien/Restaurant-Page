@@ -361,8 +361,12 @@ footer img {
     display: flex;
     flex-direction: column;
   }
-  .topics:nth-child(2) > .image-holder {
-    order: 0;
+  .topics > .image-holder {
+    order: 1;
+  }
+
+  .text > * {
+    padding: 15px 0;
   }
 
   .card-container {
