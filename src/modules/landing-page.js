@@ -1,6 +1,9 @@
 import fbIcon from "../img/facebook.png";
 import igIcon from "../img/instagram.png";
 import tiktokIcon from "../img/tiktok.png";
+import createHome from './home.js';
+import createContactUsContainer from './contact-us.js';
+import initializeMenuPage from './menu-page-helper.js';
 
 function createHeader() {
   const header = document.createElement("header");
@@ -23,6 +26,20 @@ function createHeader() {
   options.forEach((option) => {
     const btn = document.createElement("button");
     btn.textContent = option;
+    btn.setAttribute('id', option.replaceAll(/\s/gi, "").toLowerCase());
+
+    btn.addEventListener('click', ()=> {
+      const content = document.querySelector('#content');
+      content.textContent = "";
+      const id = btn.getAttribute('id');
+      if (id === 'home') {
+        content.appendChild(createHome());
+      } else if (id === 'menu') {
+        initializeMenuPage(content);
+      } else {
+        content.appendChild(createContactUsContainer())
+      }
+    });
 
     nav.appendChild(btn);
   });
@@ -68,4 +85,6 @@ export default function createLandingPage(body) {
   body.appendChild(createHeader());
   body.appendChild(createContentBody());
   body.appendChild(createFooter());
+
+  document.querySelector('#content').appendChild(createHome());
 }
