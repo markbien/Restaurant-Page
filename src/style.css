@@ -82,7 +82,6 @@ header {
 
 header > nav {
   display: flex;
-  justify-content: center;
 }
 
 nav > button {
@@ -93,6 +92,7 @@ nav > button {
   background: none;
   border: none;
   color: rgb(66, 66, 66);
+  flex: 1;
 }
 
 hr {

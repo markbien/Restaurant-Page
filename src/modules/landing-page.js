@@ -22,11 +22,11 @@ function createHeader() {
   header.appendChild(divLogo);
 
   const nav = document.createElement("nav");
-  const options = ["Home", "Menu", "Contact Us"];
+  const options = ["Home", "Menu", "Contact"];
   options.forEach((option) => {
     const btn = document.createElement("button");
     btn.textContent = option;
-    btn.setAttribute('id', option.replaceAll(/\s/gi, "").toLowerCase());
+    btn.setAttribute('id', option.toLowerCase());
     btn.addEventListener('click', ()=> {
       switchPages(btn);
     });
