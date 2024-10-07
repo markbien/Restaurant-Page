@@ -6,7 +6,7 @@ function createMenuHeading(){
   menuTitleDiv.classList.add("menu-title");
 
   const h2 = document.createElement("h2");
-  h2.textContent = "Menu";
+  h2.textContent = "Our Menu";
   const p = document.createElement("p");
   p.textContent = `The menu at LMP Restaurant is a celebration of fresh, locally sourced
         ingredients, thoughtfully crafted into seasonal dishes that highlight
